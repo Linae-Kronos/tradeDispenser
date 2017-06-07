@@ -154,6 +154,7 @@ function tradeDispenser_OnVariablesLoaded()
 			["locked"]		= false,
 		};
 		tD_CharDatas.TimelimitCheck=true;
+		tD_CharDatas.DisplayStockCheck=true;
 		tD_CharDatas.Timelimit = 20;
 		tD_CharDatas.BanlistActive=false;
 		tD_CharDatas.Raid=true;
@@ -217,5 +218,6 @@ function tradeDispenser_OnVariablesLoaded()
 		end
 	end
 	if (tD_CharDatas.SoundCheck==nil) then tD_CharDatas.SoundCheck=true end
+	if (tD_CharDatas.DisplayStockCheck==nil) then tD_CharDatas.DisplayStockCheck=true end
 end
 	

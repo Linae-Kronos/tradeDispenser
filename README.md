@@ -20,6 +20,10 @@ You can set it up differently if it doesn't suit your needs.
 
 ![tradedispenser](https://user-images.githubusercontent.com/24671466/26871282-f6eefc08-4b72-11e7-941f-e6af5f4bf612.png)
 
+- The setting "Display Water/Food stock" [enable/disable] will allow you to broadcast your stock besides the broadcast message
+
+![tradedispenser_stock](https://user-images.githubusercontent.com/24671466/26871775-987ccbe4-4b74-11e7-85c6-3343253bb652.png)
+
 ## Installation
 1. Close any instance of WoW
 2. Download **[tradeDispenser Zip file](https://github.com/Linae-Kronos/tradeDispenser/archive/master.zip)**

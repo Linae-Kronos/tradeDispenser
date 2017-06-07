@@ -52,8 +52,11 @@ function tradeDispenserSettings_OnUpdate()
 	if (tradeDispenserSettingsSoundCheck) then
 		tradeDispenserSettingsSoundCheck:SetChecked(tD_CharDatas.SoundCheck);
 	end
-end
 
+	if (tradeDispenserSettingsDisplayStockCheck) then
+		tradeDispenserSettingsDisplayStockCheck:SetChecked(tD_CharDatas.DisplayStockCheck);
+	end
+end
 
 function tradeDispenser_EditBoxUpdate()
 	tradeDispenserVerbose(2,"EditBox updated")

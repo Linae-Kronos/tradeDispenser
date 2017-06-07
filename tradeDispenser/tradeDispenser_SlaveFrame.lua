@@ -127,18 +127,84 @@ function tradeDispenserSlaveOnUpdate()
 	
 end
 
+function tradeDispenserFindItem(item)
+	if ( not item ) then return; end
+	item = string.lower(ItemLinkToName(item));
+	local link;
+	for i = 1,23 do
+		link = GetInventoryItemLink("player",i);
+		if ( link ) then
+			if ( item == string.lower(ItemLinkToName(link)) )then
+				return i, nil, GetInventoryItemTexture('player', i), GetInventoryItemCount('player', i);
+			end
+		end
+	end
+	local count, bag, slot, texture;
+	local totalcount = 0;
+	for i = 0,NUM_BAG_FRAMES do
+		for j = 1,MAX_CONTAINER_ITEMS do
+			link = GetContainerItemLink(i,j);
+			if ( link ) then
+				if ( item == string.lower(ItemLinkToName(link))) then
+					bag, slot = i, j;
+					texture, count = GetContainerItemInfo(i,j);
+					totalcount = totalcount + count;
+				end
+			end
+		end
+	end
+	return bag, slot, texture, totalcount;
+end
 
 function tradeDispenserBroadcastItems()
 	if (tD_Temp.isEnabled) then
 		
 		local tradeDispenserChannel, temp = tradeDispenserGetChannel();
+		local waterBag,waterSlot,waterTexture,waterCount 	= tradeDispenserFindItem("Conjured Crystal Water")
+		local foodBag,foodSlot,foodTexture,foodCount 		= tradeDispenserFindItem("Conjured Cinnamon Roll")
 		if (tradeItems) then tradeDispenserVerbose(1,"tradeItems: "..tradeItems) end
 		
 		local x = math.random(1, tD_CharDatas.Random);
 		local message="";
 		if (strlen(tD_CharDatas.RndText[x])<=2) then
 				message=tD_Loc.defaultBroadcast;
-		else message=tD_CharDatas.RndText[x]  end
+		else
+			message=tD_CharDatas.RndText[x]
+			if (tD_CharDatas.DisplayStockCheck and waterCount > 0) then
+				local stockStatus = ""
+				if (waterCount+foodCount <= 200) then
+					stockStatus = "LOW"
+				end
+				if (waterCount+foodCount > 200) then
+					stockStatus = "MEDIUM"
+				end
+				if (waterCount+foodCount >= 300) then
+					stockStatus = "HIGH"
+				end
+
+				local waterMessage 		= waterCount.." waters"
+				local foodMessage 		= foodCount.." foods"
+				local stockStartmessage	= "[Stock "..stockStatus.." : "
+				local stockEndmessage	= "]"
+				local separatorMessage	= " / "
+				
+				if (waterCount > 0 or foodCount > 0) then
+					message = message .. " " .. stockStartmessage
+				end
+				if (waterCount > 0) then
+					message = message .. waterMessage
+				end
+				if (waterCount > 0 and foodCount > 0) then
+					message = message .. separatorMessage
+				end
+				if (foodCount > 0) then
+					message = message .. foodMessage
+				end
+				if (waterCount > 0 or foodCount > 0) then
+					message = message .. stockEndmessage
+				end
+			end
+		end
 		tradeDispenserMessage(tradeDispenserChannel, message)
 	end
 end

@@ -150,6 +150,7 @@ function tradeDispenser_GetEnglish()
 			["scale"]		= "Scale:",
 			["autobroadcast"]	= "Auto-Broadcast:",
 			["once"]		= "Once",
+			["DisplayStock"]	= "Display Water/Food stock",
 			["PlaySounds"]		= "Play Sounds",
 			["randomtext"]	= "Random Text:",
 			["Hint"]	= {	-- open end. could have more than 4 lines
@@ -401,6 +402,7 @@ function tradeDispenser_GetGerman()
 			["scale"]		= "Grösse:",
 			["autobroadcast"]	= "Auto-Broadcast:",
 			["once"]		= "Einmal",
+			["DisplayStock"]= "Display Water/Food Stock",
 			["PlaySounds"]	= "Play Sounds",
 			["randomtext"]	= "Zufalls-Text:",
 			["Hint"]	= {	-- open end. could have more than 4 lines
@@ -656,6 +658,7 @@ function tradeDispenser_GetChinese()
 			["scale"]		= "缩放:",
 			["autobroadcast"]	= "自动广播:",
 			["once"]		= "一次",
+			["DisplayStock"]	= "Display Water/Food Stock",
 			["PlaySounds"]		= "Play Sounds",
 			["randomtext"]	= "随机广播数:",
 			["Hint"]	= {	-- open end. could have more than 4 lines
@@ -903,6 +906,7 @@ function tradeDispenser_GetFrench()
 			["scale"]		= "Echelle:",
 			["autobroadcast"]	= "Annonce Auto.:",
 			["once"]		= "Une seule fois",
+			["DisplayStock"]	= "Afficher le stock de Flotte / Nourriture",
 			["PlaySounds"]		= "Play Sounds",
 			["randomtext"]	= "Texte aléatoire:",
 			["Hint"]	= {	-- open end. could have more than 4 lines

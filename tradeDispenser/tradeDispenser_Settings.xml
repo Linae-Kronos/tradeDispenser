@@ -659,11 +659,46 @@
 				</Scripts>
 			</Slider>
 			
+			<CheckButton name="$parentDisplayStockCheck" inherits="UICheckButtonTemplate">		
+				<Size><AbsDimension x="24" y="24"/></Size>
+				<Anchors>
+					<Anchor point="TOPLEFT" relativeTo="$parentBroadcastCheck" relativePoint="BOTTOMLEFT">
+						<Offset><AbsDimension x="0" y="-30"/></Offset>
+					</Anchor>
+				</Anchors>
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentLbL" inherits="GameFontNormal" text="Display Water/Food Stock">
+							<Anchors>
+								<Anchor point="LEFT" relativeTo="$parent" relativePoint="RIGHT">
+									<Offset><AbsDimension x="0" y="0"/></Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>				
+					</Layer>
+				</Layers>				
+				<Scripts>
+					<OnLoad>
+						getglobal(this:GetName().."LbL"):SetText(tD_Loc.settings.DisplayStock);
+					</OnLoad>
+					<OnClick>
+						tradeDispenserPlaySound(this)
+						tD_CharDatas.DisplayStockCheck = not tD_CharDatas.DisplayStockCheck;
+						tradeDispenserSettings_OnUpdate();
+					</OnClick>
+					<!--<OnEnter>
+						GameTooltip:SetOwner(this:GetParent(),"ANCHOR_TOPRIGHT",200,50);
+						tradeDispenserDrawTooltip(tD_Loc.settings.TimerTooltip)				
+					</OnEnter>
+					<OnLeave>		GameTooltip:Hide();		</OnLeave>				-->	
+				</Scripts>
+			</CheckButton>
+
 			<CheckButton name="$parentSoundCheck" inherits="UICheckButtonTemplate">		
 				<Size><AbsDimension x="24" y="24"/></Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentBroadcastCheck" relativePoint="BOTTOMLEFT">
-						<Offset><AbsDimension x="0" y="-26"/></Offset>
+						<Offset><AbsDimension x="0" y="-50"/></Offset>
 					</Anchor>
 				</Anchors>
 				<Layers>
@@ -698,7 +733,7 @@
 				<Size><AbsDimension x="24" y="24"/></Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentBroadcastCheck" relativePoint="BOTTOMLEFT">
-						<Offset><AbsDimension x="0" y="-55"/></Offset>
+						<Offset><AbsDimension x="0" y="-70"/></Offset>
 					</Anchor>
 				</Anchors>
 				<Layers>
@@ -736,7 +771,7 @@
 				<Size><AbsDimension x="110" y="16"/></Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentTimelimitCheck" relativePoint="BOTTOMLEFT">
-						<Offset><AbsDimension x="56" y="-1"/></Offset>
+						<Offset><AbsDimension x="56" y="2"/></Offset>
 					</Anchor>
 				</Anchors>
 				<Layers>

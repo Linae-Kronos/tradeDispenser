@@ -5,6 +5,8 @@ elseif (GetLocale()=="zhCN") then
 	tradeDispenser_GetChinese()
 elseif (GetLocale()=="frFR") then
 	tradeDispenser_GetFrench()
+elseif (GetLocale()=="ruRU") then
+	tradeDispenser_GetRussian()
 else tradeDispenser_GetEnglish()
 end
 

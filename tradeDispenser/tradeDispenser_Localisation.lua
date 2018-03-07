@@ -254,11 +254,6 @@ function tradeDispenser_GetEnglish()
 	};
 end
 
-
-
-
-
-
 function tradeDispenser_GetGerman()
 	tradeDispenser_ProgName = "tradeDispenser";
 	-- tradeDispenser_Version is defined in tradeDispenser_Initialize.lua
@@ -507,14 +502,6 @@ function tradeDispenser_GetGerman()
 	}
 end
 
-
-
-
-
-
-
-
-
 function tradeDispenser_GetChinese()
 	tradeDispenser_ProgName = "自动售货机";
 	tD_Loc = {
@@ -759,9 +746,6 @@ function tradeDispenser_GetChinese()
 		["Horde"]       = "兽人语",
 	}
 end
-
-
-
 
 function tradeDispenser_GetFrench()
 	tradeDispenser_ProgName = "tradeDispenser";
@@ -1008,4 +992,253 @@ function tradeDispenser_GetFrench()
 		["Alliance"]	= "Commun",
 		["Horde"]       = "Orc",
 	};
+end
+
+function tradeDispenser_GetRussian()
+	tradeDispenser_ProgName = "tradeDispenser";
+	-- tradeDispenser_Version is defined in tradeDispenser_Initialize.lua
+
+	tD_Loc = {
+		["logon"]			= {
+			["changed"]		= "Версия данных изменена, восстановление настоек",
+			["welcome"] 	= "Версия "..tradeDispenser_Version.." инициализирована",
+		},	
+		["configtitle"]		= tradeDispenser_ProgName.." вер."..tradeDispenser_Version,
+		["configItems"]		= "Вставьте деньги и предметы",
+
+		["about"]		= {	-- open end. could have more than 5 lines
+			[1] = "|cFF7E9CE5О "..tradeDispenser_ProgName,
+			[2] = "|cFFFFFFFF  Версия: |cFF45E849"..tradeDispenser_Version,
+			[3] = "|cFFFFFFFF  Автор:  |cFF45E849Kaboom  @ Arthas (EU)",
+			[4] = "|cFFFFFFFF  Ядро:    |cFF45E849Shag    @ Arthas (EU)",
+			[5] = "|cFFFFFFFF  Больше:    |cFF45E849Пожалуйста прочтите ReadMe",
+		},
+		["help"]		= {	-- open end. could have more than 9 lines
+			[1] = "|cFF7E9CE5Префикс:",
+			[2] = "|cFFFFFFFF  /td или /tradeDispenser       |cFF45E849Показывает Помощь",
+			[3] = "|cFF7E9CE5Опции (Используйте: Префикс + Опции)",
+			[4] = "|cFFFFFFFF  config         |cFF45E849Переключает окно опций",
+			[5] = "|cFFFFFFFF  toggle         |cFF45E849Активирует/Деактивирует "..tradeDispenser_ProgName,
+			[6] = "|cFFFFFFFF  broadcast   |cFF45E849Вещает обмен",
+			[7] = "|cFFFFFFFF  OSD           |cFF45E849Переключает ЭМ (Горячие кнопки)",
+			[8]	= "|cFFFFFFFF  verbose X   |cFF45E849Показывает информацию отладки. (Уровень X: 0=выкл, 3=ВСЕ)",
+			[9] = "|cFFFFFFFF  resetpos      |cFF45E849Восстанавливает все окна tradeDispenser",
+			[10] = "|cFFFFFFFF  about          |cFF45E849Показывает больше информации о "..tradeDispenser_ProgName,
+		},
+		["whisper"]		= {		-- default messages - could be edited ingame
+			[1] = {
+				["short"]	= "что-то не так",
+				["default"]	= tradeDispenser_ProgName..": Что-то пошло не так в инвентаре (может лаг). Не могу передать предметы. Попробуй еще раз!",
+			},
+			[2]	= {
+				["short"]	= "Спам: Предметов не осталось",
+				["default"]	= tradeDispenser_ProgName..": У меня закончились предметы, пожалуйста не надо предлагать мне обмен.",
+			},
+			[3] = {
+				["short"]	= "Связка не полная",
+				["default"]	= tradeDispenser_ProgName..": Извини, что последняя связка не полная. К сожалению в инвентаре у меня больше нет.",
+			},
+			[4]	= {
+				["short"]	= "Предметов больше нет",
+				["default"]	= tradeDispenser_ProgName..": Предметы закончились!",
+			},
+			[5] = {
+				["short"]	= "Требую денег!",
+				["default"]	=  tradeDispenser_ProgName..": За эти предметы я бы взял ",
+			},
+			[6] = {
+				["short"]	= "Уровень слишком мал",
+				["default"]	= "Твой уровень слишком мал, забудь об обмене.",
+			},
+			[7]	= {
+				["short"]	= "Не в моей гильдии",
+				["default"]	= "Ты не из моей гильдии, забудь об обмене.",
+			},
+			[8]	= {
+				["short"]	= "Не в моем рейде",
+				["default"]	= "Ты не в рейде/группе, забудь об обмене.",
+			},
+			[9] = {
+				["short"] 	= "Достигнуто макс. количество",
+				["default"]	= "У тебя уже максимальное количество предметов! Забудь об обмене.",
+			},
+			[10] = {
+				["short"]	= "Забаненые игроки",
+				["default"]	= "Ты в моем черном списке! Забудь об обмене.",
+			},			
+			[11] = {
+				["short"]	= "Осталось 10 секунд",
+				["default"] = "Пожалуйста прими обмен, иначе отменю его через 10 секунд. (Возможен так же лаг)",
+			},
+		},
+		["Broadcast"] 				= {
+			[1] 					= tradeDispenser_ProgName.." активирован! Кидайте обмен, и получите предметы.",
+			[2]						= "Измените эту строку, чтобы создать новое сообщение вещания",
+			[3]						= "Примечание: Предметы можно вставить через Шифт-Клик",
+			[4]						= "Добавьте больше сообщений",	
+		},		
+		["noItemsToTrade"]			= "Простите, для данного типа клиента не заданы предметы. Проверьте профиль.",
+		["Opposite"]				= "Твой клиент:",
+		["rack"]					= "Полка #",
+		["RackTitle"]				= "Активная полка",	
+		["resetframes"]				= "Все окна "..tradeDispenser_ProgName.." были возвращены";
+		["buttons"]			= {
+			["tradecontrol"] 		= "Упр-ие обменом",
+			["settings"]			= "Настройки",
+			["enabled"]				= "Включен",
+			["disabled"]			= "Отключен",
+			["hide"]				= "Спрятать",
+			["whispers"]			= "Шепоты",
+			["reset"]				= "Сбросить",
+			["banlist"]				= "Черный список",
+		},
+		["MapBugMessage"] 	= " Данные о твоем клиенте не были получены. Пожалуйста, закройте карту во время обмена.",
+		["profile"]			= {
+			["title"]		= "Показать профиль",
+			[1]			= "Все классы",
+			[2]			= "Воин",
+			[3]			= "Разбойник",
+			[4]			= "Охотник",
+			[5]			= "Чернокнижник",
+			[6]			= "Маг",
+			[7]			= "Друид",
+			[8]			= "Жрец",
+			[9]			= "Паладин",
+			[10]		= "Шаман",
+			[11]		= "Ближний бой",
+			[12]		= "Использующие ману",
+			[13]		= "Лекари",
+			[14] 		= "для собств. исп-ия",
+		},
+		["channel"]			= {
+			["say"]			= "Сказать",
+			["yell"]		= "Крикнуть",
+			["guild"]		= "Гильдия",
+			["raid"]		= "Рейд",
+			["party"]		= "Группа",
+		},	
+		["settings"]		= {
+			["title"]		= "Настройки:",
+			["channel"]		= "Канал",
+			["broadcasttext"]="Текст вещания",
+			["broadcastopt"]= "Опции вещания:",
+			["bkcolor"]		= "Фон",
+			["border"]		= "Рамка",
+			["horiz"]		= "Повернуть",
+			["osdtooltip"]	= {	-- open end. could have more than 3 lines
+				[0] = "Переключатель для Экранного меню",
+				[1] = "Активировать, чтобы сделать",
+				[2] = "окно видимым",
+			},
+			["broadcasttooltip"]	= {
+				[0] = "Активирует Автовещание",
+				[1] = "Работает только тогда, когда",
+				[2] =  tradeDispenser_ProgName.." активирован",
+			},
+			["lock"]		= "Закрепить",
+			["scale"]		= "Масштаб:",
+			["autobroadcast"]	= "Автовещание:",
+			["once"]		= "Один раз",
+			["DisplayStock"]	= "Показать запас воды/еды",
+			["PlaySounds"]		= "Воспроизвести звуки",
+			["randomtext"]	= "Случайное сообщение:",
+			["Hint"]	= {	-- open end. could have more than 4 lines
+				[0]	= "Только для информации:",
+				[1] = "Профили совокупны, это значит, что ",
+				[2] = "воин получит предметы из профилей:",
+				[3] = "Все классы + Воин + Ближний бой",
+				[4] = "Заметка: Лечащие классы не получат",
+				[5] = "предметы из профиля 'Использующие ману'",
+			},
+			["Timelimit"] = "Срок по времени",
+			["TimerTooltip"] = {
+				[0] = "Эта функция запустит таймер,",
+				[1] = "для ограничения продолжительности обмена",
+				[2] = "до того как "..tradeDispenser_ProgName.." отменяет сделку,",
+				[3] = "на которую клиент получит предупреждение.",
+				[4] = "Заметка: Это будет работать, только если ВЫ уже",
+				[5] = "приняли обмен."
+			},			
+		},
+		["OSD"]				= {
+			["OSDtitle"]	= "ЭМ",
+			["notenabled"]	= tradeDispenser_ProgName.." не включен",
+			["broadcasttip"]	= {
+				["title"] 		= "Вещание обмена",
+				["channel"]		= "Канал сообщения: ",	-- here follows the localised channel-name
+				["left"]		= "Левый клик: Вещать сразу",
+				["right"]		= "Правый клик: Переключает Автоматическое вещание",
+			},
+			["actbutton"] 	= {
+				["activate"]	= "Активировать "..tradeDispenser_ProgName,
+				["deactivate"]	= "Деактивировать "..tradeDispenser_ProgName,
+				["left"]	= "Левый клик: Переключить "..tradeDispenser_ProgName,
+				["right"]	= "Правый клик: Очистить список",
+				["noright"]	= "Правый клик: Запретить очистку",
+			},
+			["configbtn"]	= {
+				["show"]	= "Показать окно настроек",
+				["hide"]	= "Скрыть окно настроек",
+				["left"]	= "Левый клик: открыть малое окно настроек",
+				["right"]	= "Правый клик: открыть полное окно настроек",
+			},
+		},	
+		["control"]			= {
+			["title"]		= "Управление обменом:",
+			["ignore"]		= "Игнорировать игроков",
+			["notraid"]		= "вне рейда/группы",		
+			["notinraid"]	= {	-- open end. could have more than 5 lines
+				[0]			= "Игнорировать игроков вне рейда",
+				[1]			= "Эта функция игнорирует все запросы обмена",
+				[2]			= "от игроков , которые НЕ состоят в группе.",
+				[3]			= "Эта функция работает только если вы",
+				[4]			= "состоите в рейде или группе",
+			},
+			["acceptguild"]	= "Принимать гильдию",
+			["autoaccept"]	= "Принимать автоматически",
+			["ClientInfos"]="Показать инфо клиента",
+			["accguild"]	= {	-- open end. could have more than 3 lines
+				[0]			= "Не блокировать членов гильдии",
+				[1]			= "Принимать их обмен даже если они",
+				[2]			= "не состоят в рейде/группе",
+			},
+			["FreeCheckBox"]= "Бесплатно для членов\nрейда/гильдии",
+			["Free4Guild"]	= {
+				[0]			= "Бесплатные предметы для рейда и гильдии",
+				[1]			= "При активации этой этой функции",
+				[2]			= "все члены гильдии и рейда получат",
+				[3]			= "Ваши предметы бесплатно.",
+			},
+			["leveltext"]	= "Уровень клиента",
+			["level"]		= "Минимальный: ",
+			["register"]	= "Регистрация клиентов",
+			["maxtrades"]	= "Макс. кол-во обмена на клиент:",
+		},
+		["Banlist"]			= {
+			["Title"]		= "Заблокированные игроки:",
+			["Import"]		= "Импортировать Черный список",
+			["Add"]			= "Добавить",
+			["Remove"]		= "Убрать",
+		},		
+		["UImessages"]	= {
+			["cancelled"]	= "Обмен отменен",
+			["complete"]	= "Обмен закончен",
+			["failed"]		= "Обмен не удался",
+		},
+		["KeyBindings"]		= {
+			["header"]		= tradeDispenser_ProgName,
+			[1]				= "Переключить tradeDispenser",
+			[2]				= "Показать окно настроек",
+			[3]				= "Показать ЭМ",
+			[4]				= "Мгновенное вещание",
+		},		
+		["activated"] 		= tradeDispenser_ProgName.." активирован",
+		["deactivated"] 	= tradeDispenser_ProgName.." деактивирован",
+		["verbose"]		= {
+			["isset"]	= "Verbose уровень сейчас: ",
+			["setto"]	= "Verbose уровень изменен на: ",
+		},
+		["Alliance"]		= "всеобщий",
+		["Horde"]			= "орочий",
+	}
 end
